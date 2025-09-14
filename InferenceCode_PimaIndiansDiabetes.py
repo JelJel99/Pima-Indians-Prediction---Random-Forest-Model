@@ -13,7 +13,7 @@ st.write("This app uses a trained Random Forest model to predict whether a perso
 # Input
 pregnancies = st.number_input("Pregnancies", min_value=0, max_value=20, value=0)
 glucose = st.number_input("Glucose", min_value=40, max_value=200, value=120)
-blood_pressure = st.number_input("Blood Pressure (mm Hg)", min_value=40, max_value=150, value=70)
+blood_pressure = st.number_input("Blood Pressure (mm Hg)", min_value=30, max_value=150, value=70)
 skin_thickness = st.number_input("Skin Thickness (mm)", min_value=7, max_value=100, value=20)
 insulin = st.number_input("Insulin (mu U/ml)", min_value=2, max_value=900, value=80)
 bmi = st.number_input("BMI", min_value=10.0, max_value=70.0, value=25.0, format="%.1f")
@@ -32,3 +32,4 @@ if st.button("Predict"):
         st.error(f"⚠️ The model predicts this person **has diabetes** (probability: {proba:.2f})")
     else:
         st.success(f"✅ The model predicts this person **does not have diabetes** (probability: {proba:.2f})")
+
