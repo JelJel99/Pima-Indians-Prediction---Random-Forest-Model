@@ -1,17 +1,16 @@
 import streamlit as st
 import pickle
 import numpy as np
+import joblib
 
-# Load trained model
-with open("RF_best_Model.pkl", "rb") as f:
-    model = pickle.load(f)
+model = joblib.load("RF_best_Model.pkl")
 
 st.set_page_config(page_title="Diabetes Prediction", page_icon="🩺", layout="centered")
 
 st.title("🩺 Diabetes Prediction App")
 st.write("This app uses a trained Random Forest model to predict whether a person has diabetes based on medical data.")
 
-# Input fields
+# Input
 pregnancies = st.number_input("Pregnancies", min_value=0, max_value=20, value=0)
 glucose = st.number_input("Glucose", min_value=40, max_value=200, value=120)
 blood_pressure = st.number_input("Blood Pressure (mm Hg)", min_value=40, max_value=150, value=70)
